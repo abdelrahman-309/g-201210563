@@ -1,0 +1,434 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--font);
+    text-transform: capitalize;
+}
+
+:root
+{
+    --font:montserrat
+}
+
+.div
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+p
+{
+    text-transform: capitalize;
+}
+
+/*screen loader*/
+.loader-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.loader{
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    color: grey;
+    border-radius: 50%;
+    border-top-color: white;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader{
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*/screen loader*/
+
+
+/* carosel */
+
+.drk:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: black ;
+    opacity:0.7;
+}
+
+.carousel-indicators
+{
+    bottom: 50px;
+}
+
+.carousel-caption
+
+{
+    z-index: 1;
+    margin-bottom:50px;
+}
+
+.slider-info
+{
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 70%;
+    left: 20%;
+}
+
+.slider-info h2
+{
+    font-size: 30px;
+
+}
+
+.country
+{
+    position: relative;
+    bottom: 50px;
+}
+
+.major
+{
+    position: relative;
+    bottom: 50px;
+}
+
+.Hobbies
+{
+    position: relative;
+    bottom: 50px;
+}
+/* /carosel */
+
+
+.body
+{
+    font-family: montserrat;
+    min-height: 100%;
+}
+
+
+
+
+/*slider text */
+
+
+.readmore
+{
+    color: white;
+    text-decoration: none;
+}
+.readmore:hover
+{
+    color: white;
+    text-decoration: none;
+} 
+
+/*/slider text */
+
+
+/* Nav bar */
+
+
+.navbar
+{
+    background-color: transparent;
+    z-index: 11;
+}
+
+.nav-link
+{ 
+    color: black;
+    font-size: 15px;
+    text-decoration: none; 
+}
+
+.nav-link:hover
+{
+    color: black;
+}
+
+
+.nav-item
+{
+    margin-right: 5px;
+}
+
+.nav-item:hover
+{
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+/* /Nav bar */
+
+
+.Aboutme
+{
+    font-size:25px;
+    color: black;
+    font-family: montserrat;
+    font-weight: bold;
+    z-index: 10;
+    text-decoration: none; 
+}
+
+.Aboutme:hover
+{
+    color: black;   
+}
+
+.line,.line2
+{
+    width: 80%;
+    margin-top: 150px;
+    margin-left: 10%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+     rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.line2
+{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.my-photo
+{
+   
+    text-align: center;
+    width: 100%;
+}
+.img-photo
+{
+    width: 150px;
+    height: 150px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.my-photo h3
+{
+    font-family:montserrat ;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.my-photo p
+{
+    font-size: larger;
+}
+.egypt
+{
+    text-decoration: none;
+    color: black;
+}
+
+.egypt:hover
+{
+    color: black;
+}
+
+.flag,.logo
+{
+    height: 20px;
+    width: 20px;
+}
+
+
+.header
+{
+    margin-top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 35px;
+    font-family: montserrat;
+    font-weight: bold;
+}
+
+.videos
+{
+    width: 100%;
+    height: 200px;
+    display: grid;
+
+}
+
+.cairo
+{
+    width: 100%;
+    height: 200px;
+    position:absolute;
+}
+
+video
+{
+    position: relative;
+    width: 30%;
+    height: 200;
+}
+
+.watch
+{
+    color: black;
+    text-decoration: none;
+}
+.watch:hover
+{
+    color: red;
+}
+
+
+
+
+.university-h1
+{
+    text-align: center;
+    font-family:var(--font) ;
+    margin-top: 40px;
+}
+
+.university-container
+{
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
+}
+.university-img
+{
+    position: absolute;
+    width: 150px;
+    height: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.university-info
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+.faculty
+{
+    margin-top: 20px;
+}
+
+
+/* footer*/
+
+footer
+{
+    width: 100%;
+    height: 200px;
+}
+/*Big footer*/
+.b-footer
+{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(58, 54, 54);
+    opacity: 0.5;
+}
+
+.links
+{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.b-footer ul
+{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.fab
+{
+    color: white;
+    font-size: 30px;
+    padding: 25px;
+}
+.fab:hover
+{
+    color: white;
+}
+
+.ig:hover
+{
+    color: purple;
+}
+
+.you:hover
+{
+    color: red;
+}
+
+.fa
+{
+    padding-left: 0;
+}
+
+.fa:hover
+{
+    color: blue;
+}
+/*/Big footer*/
+
+
+/*small footer*/
+
+.s-footer
+{
+    width: 100%;
+    height: 20%;
+    background-color:black ;
+    opacity: 1;
+    color: white;
+    position: relative;
+}
+
+.s-footer div
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+}
+
+/*/small footer*/

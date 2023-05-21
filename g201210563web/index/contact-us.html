@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="contact us.css">
+    <link rel="shortcut icon" href="image/message.png">
+
+</head>
+<div id="root"></div>
+<body>
+<script type="text/babel">
+    
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
+const validateForm = errors => {
+  let valid = true;
+  Object.values(errors).forEach(val => val.length > 0 && (valid = false));
+  return valid;
+};
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: null,
+      email: null,
+      password: null,
+      errors: {
+        message: '',
+        email: '',
+        password: '',
+      }
+    };
+  }
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case 'message': 
+        errors.message = 
+          value.length < 15
+            ? 'Message must be at least 15 characters long!'
+            : '';
+        break;
+      case 'email': 
+        errors.email = 
+          validEmailRegex.test(value)
+            ? ''
+            : 'Email is not valid!';
+        break;
+      case 'password': 
+        errors.password = 
+          value.length < 8
+            ? 'Password must be at least 8 characters long!'
+            : '';
+        break;
+      default:
+        break;
+    }
+
+    this.setState({errors, [name]: value});
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if(validateForm(this.state.errors)) {
+      console.info('Valid Form')
+    }else{
+      console.error('Invalid Form')
+    }
+  }
+
+  render() {
+    const {errors} = this.state;
+    return (
+      <div className='wrapper'>
+        <div className='form-wrapper'>
+          <h2>Send A Message</h2>
+          <form onSubmit={this.handleSubmit} noValidate>
+            <div className='message'>
+              <label htmlFor="message">Message</label>
+              <input type='text' name='message' onChange={this.handleChange} noValidate />
+              {errors.message.length > 0 && 
+                <span className='error'>{errors.message}</span>}
+            </div>
+            <div className='email'>
+              <label htmlFor="email">Email</label>
+              <input type='email' name='email' onChange={this.handleChange} noValidate />
+              {errors.email.length > 0 && 
+                <span className='error'>{errors.email}</span>}
+            </div>
+            <div className='submit'>
+              <button>Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+</script>
+</body>
+</html> 

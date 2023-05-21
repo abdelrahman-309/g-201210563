@@ -1,0 +1,64 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgrey;
+}
+body{
+    margin-left: 10%;
+
+}
+header
+{
+    width: 100%;
+    position: relative;
+}
+.title
+{
+    text-align: center;
+    align-items: center;
+}
+header h2
+{
+    position: absolute;
+    margin-top: 50px;
+}
+header .student
+{
+    position: absolute;
+    margin-top: 50px;
+}
+header .email
+{
+    position: absolute;
+    margin-top: 100px;
+}
+hr{
+    width: 80%;
+}
+.one{
+    margin-top:150px;
+}
+.profile
+{
+    margin-top: 50px;
+}
+.two
+{
+    margin-top: 75px;
+}
+section
+{
+    width: 100%;
+    margin-top: auto;
+}
+.education
+{
+    margin: 50px;
+    margin-left: 00%;
+}
+.year
+{
+    margin-top: 50px;
+}
